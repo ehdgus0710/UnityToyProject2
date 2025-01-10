@@ -28,6 +28,9 @@ public class EntityStatus : MonoBehaviour, IDamageable
 
     public virtual void OnDamage(ref DamageInfo damageInfo)
     {
+        if (IsDead)
+            return;
+
         statusTable[StatusInfo.Hp] -= damageInfo.damage;
         damageInfo.isHit = true;
 

@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100074, guid: be66986effd141b4992d2d78be127139, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7749402754958597678}
+    - targetCorrespondingSourceObject: {fileID: 100074, guid: be66986effd141b4992d2d78be127139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2956054296756481075}
   m_SourcePrefab: {fileID: 100100000, guid: be66986effd141b4992d2d78be127139, type: 3}
 --- !u!1 &5940678847867042595 stripped
 GameObject:
@@ -190,3 +193,21 @@ MonoBehaviour:
   hpEvnet:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2956054296756481075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940678847867042595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe72c145aafe0fa418c456b14068ac69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: -1855177935355346227}
+  reloadTime: 1
+  damage: 20
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
