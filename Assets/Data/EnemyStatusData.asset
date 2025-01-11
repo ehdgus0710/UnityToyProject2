@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyStatusData
   m_EditorClassIdentifier: 
   <Hp>k__BackingField: 100
-  <MoveSpeed>k__BackingField: 10
+  <MoveSpeed>k__BackingField: 3
   <AttackSpeed>k__BackingField: 0.2
