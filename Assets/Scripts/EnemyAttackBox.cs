@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyAttackBox : MonoBehaviour
 {
-    [SerializeField] private EnemyController controller;
+    [SerializeField] private EnemyStatus status;
     [SerializeField] private float reloadTime;
     [SerializeField] private float damage;
 
@@ -26,6 +26,9 @@ public class EnemyAttackBox : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (status.IsDead)
+            return;
+
         if (!IsReloadAttack && Physics.OverlapBoxNonAlloc(transform.position, transform.localScale, targetColliders, transform.rotation, targetLayer.value) != 0)
         {
             Vector3 hitPoint = targetColliders[0].ClosestPoint(transform.position);
@@ -37,6 +40,10 @@ public class EnemyAttackBox : MonoBehaviour
             damageInfo.hitDirection = overlapDirection;
 
             targetColliders[0].GetComponent<IDamageable>()?.OnDamage(ref damageInfo);
+
+            if (!damageInfo.isHit)
+                return;
+
             currentHitTime = Time.time;
             IsReloadAttack = true;
         }

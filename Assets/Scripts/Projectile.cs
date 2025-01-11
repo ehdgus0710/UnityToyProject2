@@ -3,15 +3,12 @@ using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    private LayerMask targetLayer;
-    [SerializeField]
-    private float moveSpeed;
-    [SerializeField]
-    private float damage;
+    [SerializeField] private GameObject hitEffect;
+    [SerializeField] private LayerMask targetLayer;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float damage;
 
-    [SerializeField]
-    private float lifeTime;
+    [SerializeField] private float lifeTime;
 
     private DamageInfo damageInfo;
     private Vector3 moveDirection;
@@ -44,8 +41,13 @@ public class Projectile : MonoBehaviour
             if(damageable != null && !damageable.IsDead)
             {
                 damageInfo.hitPoint = other.ClosestPoint(transform.position);
-                damageInfo.hitDirection = (damageInfo.hitPoint  - transform.position).normalized;
+                damageInfo.hitDirection = (damageInfo.hitPoint - transform.position).normalized;
                 damageable.OnDamage(ref damageInfo);
+
+                if(hitEffect != null)
+                {
+                    var effect = Instantiate(hitEffect, damageInfo.hitPoint, hitEffect.transform.rotation, null);
+                }
 
                 if (damageInfo.isHit)
                 {

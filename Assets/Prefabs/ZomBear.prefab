@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe72c145aafe0fa418c456b14068ac69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: -3565455014149760748}
+  status: {fileID: 5665066741018093768}
   reloadTime: 1
   damage: 20
   targetLayer:

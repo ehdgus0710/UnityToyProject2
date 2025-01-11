@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -58,6 +57,9 @@ public class PlayerController : MonoBehaviour
 
     private void LootAt()
     {
+        if(Time.timeScale == 0f)
+            return;
+
         mouseRay = playerCamara.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(mouseRay, out hitData, 1000))
         {

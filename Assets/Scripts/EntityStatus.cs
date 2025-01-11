@@ -5,16 +5,13 @@ using UnityEngine.Events;
 
 public class EntityStatus : MonoBehaviour, IDamageable
 {
-    [SerializeField]
-    private StatusData statusData;
+    [SerializeField] protected StatusData statusData;
 
     protected Dictionary<StatusInfo, float> statusTable = new Dictionary<StatusInfo, float>();
     public bool IsDead { get; protected set; } = false;
 
-    [SerializeField]
-    public UnityEvent deathEvnet;
-    [SerializeField]
-    public UnityEvent<float, float> hpEvnet;
+    [SerializeField] public UnityEvent deathEvnet;
+    [SerializeField] public UnityEvent<float, float> hpEvnet;
 
     protected virtual void Awake()
     {
