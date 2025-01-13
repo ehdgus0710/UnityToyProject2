@@ -55,7 +55,12 @@ public class Projectile : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+        }
+        else if (LayerMask.NameToLayer("Wall") ==  other.gameObject.layer)
+        {
+            Destroy(gameObject);
 
         }
+
     }
 }
